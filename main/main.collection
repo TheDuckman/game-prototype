@@ -1,7 +1,7 @@
 name: "main"
 instances {
   id: "tank"
-  prototype: "/main/tank.go"
+  prototype: "/main/foes/tank.go"
   position {
     x: 175.0
     y: 59.0
@@ -21,7 +21,7 @@ instances {
 }
 instances {
   id: "tank1"
-  prototype: "/main/tank.go"
+  prototype: "/main/foes/tank.go"
   position {
     x: 200.0
     y: 199.0
@@ -41,7 +41,7 @@ instances {
 }
 instances {
   id: "tank2"
-  prototype: "/main/tank.go"
+  prototype: "/main/foes/tank.go"
   position {
     x: 55.0
     y: 181.0
@@ -61,7 +61,7 @@ instances {
 }
 instances {
   id: "shark"
-  prototype: "/main/shark.go"
+  prototype: "/main/foes/shark.go"
   position {
     x: 231.0
     y: 101.0
@@ -81,7 +81,7 @@ instances {
 }
 instances {
   id: "shark1"
-  prototype: "/main/shark.go"
+  prototype: "/main/foes/shark.go"
   position {
     x: 111.0
     y: 166.0
@@ -104,7 +104,7 @@ embedded_instances {
   id: "map"
   data: "components {\n"
   "  id: \"map\"\n"
-  "  component: \"/main/map.tilemap\"\n"
+  "  component: \"/main/map/map.tilemap\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
@@ -141,7 +141,7 @@ embedded_instances {
   id: "player"
   data: "components {\n"
   "  id: \"player\"\n"
-  "  component: \"/main/player.script\"\n"
+  "  component: \"/main/player/player.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
@@ -182,7 +182,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"rocketfactory\"\n"
   "  type: \"factory\"\n"
-  "  data: \"prototype: \\\"/main/rocket.go\\\"\\n"
+  "  data: \"prototype: \\\"/main/player/rocket.go\\\"\\n"
   "load_dynamically: false\\n"
   "dynamic_prototype: false\\n"
   "\"\n"

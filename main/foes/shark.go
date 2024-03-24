@@ -1,6 +1,6 @@
 components {
   id: "foe-explode"
-  component: "/main/foe-explode.script"
+  component: "/main/foes/explode.script"
   position {
     x: 0.0
     y: 0.0
@@ -15,7 +15,7 @@ components {
 }
 components {
   id: "patrol"
-  component: "/main/patrol.script"
+  component: "/main/foes/patrol.script"
   position {
     x: 0.0
     y: 0.0
