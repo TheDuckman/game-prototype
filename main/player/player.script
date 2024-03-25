@@ -4,6 +4,7 @@ function init(self)
 	self.firing = false
 	self.input = vmath.vector3()
 	self.dir = vmath.vector3(0,1,0)
+	self.correction = vmath.vector3()
 	self.speed = 150
 end
 
@@ -21,12 +22,6 @@ function update(self, dt)
 	if self.moving then
 		local pos = go.get_position()
 		pos = pos + self.dir * self.speed * dt
-		if pos.x < 0 then
-			pos.x = 0
-		end
-		if pos.y < 0 then
-			pos.y = 0
-		end
 		go.set_position(pos)
 	end
 	if self.firing then
@@ -37,6 +32,7 @@ function update(self, dt)
 	end
 		-- do things
 	self.firing = false
+	self.correction = vmath.vector3()
 	reset_movement(self)
 end
 
@@ -79,6 +75,26 @@ function fixed_update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
+	  -- Handle collision
+	if message_id == hash("contact_point_response") then
+	-- Get the info needed to move out of collision. We might
+	-- get several contact points back and have to calculate
+	-- how to move out of all of them by accumulating a
+	-- correction vector for this frame:
+		if message.distance > 0 then
+			-- First, project the accumulated correction onto
+		 	-- the penetration vector
+		  	local proj = vmath.project(self.correction, message.normal * message.distance)
+		  	if proj < 1 then
+				-- Only care for projections that does not overshoot.
+				local comp = (message.distance - message.distance * proj) * message.normal
+				-- Apply compensation
+				go.set_position(go.get_position() + comp)
+				-- Accumulate correction done
+				self.correction = self.correction + comp
+		  	end
+		end
+	end
 end
 
 function on_reload(self)
