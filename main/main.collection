@@ -3,8 +3,8 @@ instances {
   id: "tank"
   prototype: "/main/foes/tank.go"
   position {
-    x: 175.0
-    y: 59.0
+    x: 377.0
+    y: 159.0
     z: 1.0
   }
   rotation {
@@ -103,8 +103,8 @@ instances {
   id: "player"
   prototype: "/main/player/player.go"
   position {
-    x: 90.0
-    y: 119.0
+    x: 91.0
+    y: 142.0
     z: 0.2
   }
   rotation {
@@ -119,57 +119,12 @@ instances {
     z: 1.0
   }
 }
-scale_along_z: 0
-embedded_instances {
+instances {
   id: "map"
-  data: "components {\n"
-  "  id: \"pretty_map\"\n"
-  "  component: \"/main/map/pretty_map.tilemap\"\n"
-  "  position {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "  property_decls {\n"
-  "  }\n"
-  "}\n"
-  "embedded_components {\n"
-  "  id: \"collisionobject\"\n"
-  "  type: \"collisionobject\"\n"
-  "  data: \"collision_shape: \\\"/main/map/pretty_map.tilemap\\\"\\n"
-  "type: COLLISION_OBJECT_TYPE_STATIC\\n"
-  "mass: 0.0\\n"
-  "friction: 0.1\\n"
-  "restitution: 0.5\\n"
-  "group: \\\"border\\\"\\n"
-  "mask: \\\"default\\\"\\n"
-  "linear_damping: 0.0\\n"
-  "angular_damping: 0.0\\n"
-  "locked_rotation: false\\n"
-  "bullet: false\\n"
-  "\"\n"
-  "  position {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "}\n"
-  ""
+  prototype: "/main/map/map.go"
   position {
-    x: 309.0
-    y: 37.0
+    x: 308.0
+    y: 57.0
     z: 0.0
   }
   rotation {
@@ -184,3 +139,4 @@ embedded_instances {
     z: 1.0
   }
 }
+scale_along_z: 0
