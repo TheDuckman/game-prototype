@@ -1,5 +1,7 @@
 function on_message(self, message_id, message, sender)
 	if message_id == hash("collision_response") then
+		sprite.set_hflip("#sprite", false)
+		sprite.set_vflip("#sprite", false)
 		sprite.play_flipbook("#sprite", "explosion")
 	elseif message_id == hash("animation_done") then
 		go.delete()
