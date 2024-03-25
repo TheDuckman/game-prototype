@@ -60,46 +60,6 @@ instances {
   }
 }
 instances {
-  id: "shark"
-  prototype: "/main/foes/shark.go"
-  position {
-    x: 231.0
-    y: 101.0
-    z: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "shark1"
-  prototype: "/main/foes/shark.go"
-  position {
-    x: 111.0
-    y: 166.0
-    z: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
   id: "chopper"
   prototype: "/main/foes/chopper.go"
   position {
