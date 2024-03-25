@@ -13,8 +13,18 @@ components {
     w: 1.0
   }
   properties {
+    id: "foe_id"
+    value: "2.0"
+    type: PROPERTY_TYPE_NUMBER
+  }
+  properties {
     id: "speed"
-    value: "25.0"
+    value: "60.0"
+    type: PROPERTY_TYPE_NUMBER
+  }
+  properties {
+    id: "base_distance"
+    value: "130.0"
     type: PROPERTY_TYPE_NUMBER
   }
 }
@@ -36,7 +46,7 @@ components {
 embedded_components {
   id: "sprite"
   type: "sprite"
-  data: "default_animation: \"tank-down\"\n"
+  data: "default_animation: \"elite-soldier-down\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   "textures {\n"
@@ -84,8 +94,8 @@ embedded_components {
   "    count: 3\n"
   "    id: \"\"\n"
   "  }\n"
-  "  data: 8.323354\n"
-  "  data: 11.077845\n"
+  "  data: 5.88474\n"
+  "  data: 8.292683\n"
   "  data: 10.0\n"
   "}\n"
   "linear_damping: 0.0\n"

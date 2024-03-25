@@ -1,6 +1,6 @@
 components {
-  id: "foe-explode"
-  component: "/main/foes/explode.script"
+  id: "explode"
+  component: "/main/behavior/explode.script"
   position {
     x: 0.0
     y: 0.0
@@ -14,8 +14,8 @@ components {
   }
 }
 components {
-  id: "patrol"
-  component: "/main/foes/patrol.script"
+  id: "circular_patrol"
+  component: "/main/behavior/circular_patrol.script"
   position {
     x: 0.0
     y: 0.0
@@ -27,11 +27,26 @@ components {
     z: 0.0
     w: 1.0
   }
+  properties {
+    id: "foe_id"
+    value: "3.0"
+    type: PROPERTY_TYPE_NUMBER
+  }
+  properties {
+    id: "speed"
+    value: "60.0"
+    type: PROPERTY_TYPE_NUMBER
+  }
+  properties {
+    id: "base_distance"
+    value: "80.0"
+    type: PROPERTY_TYPE_NUMBER
+  }
 }
 embedded_components {
   id: "sprite"
   type: "sprite"
-  data: "default_animation: \"shark\"\n"
+  data: "default_animation: \"vehicle-down\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   "textures {\n"
@@ -66,7 +81,7 @@ embedded_components {
   "    shape_type: TYPE_BOX\n"
   "    position {\n"
   "      x: 0.0\n"
-  "      y: -1.0\n"
+  "      y: -3.0\n"
   "      z: 0.0\n"
   "    }\n"
   "    rotation {\n"
@@ -80,7 +95,7 @@ embedded_components {
   "    id: \"\"\n"
   "  }\n"
   "  data: 10.0\n"
-  "  data: 10.693642\n"
+  "  data: 10.0\n"
   "  data: 10.0\n"
   "}\n"
   "linear_damping: 0.0\n"
