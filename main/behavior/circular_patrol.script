@@ -1,0 +1,75 @@
+require("main.animation.change_sprite_direction")
+
+go.property("foe_id", 0)
+go.property("speed", 30)
+go.property("base_distance", 70)
+
+function init(self)
+  self.moving = true
+  self.distance = self.base_distance
+  self.dir = vmath.vector3(0, 1, 0)
+  if self.foe_id == 0 then
+    self.name = "tank"
+  elseif self.foe_id == 1 then
+    self.name = "shark"
+  elseif self.foe_id == 2 then
+    self.name = "elite-soldier"
+  elseif self.foe_id == 3 then
+    self.name = "vehicle"
+  elseif self.foe_id == 4 then
+    self.name = "chopper"
+  end
+  sprite.play_flipbook("#sprite", change_direction({ x = self.dir.x, y = self.dir.y }, self.name))
+end
+
+function on_message(self, message_id, message, sender)
+  if message_id == hash("collision_response") then
+    self.speed = 0
+  end
+end
+
+local function new_direction(direction)
+  local new_dir = nil
+  if direction.x == 1 then
+    new_dir = vmath.vector3(0, -1, 0)
+  elseif direction.y == -1 then
+    new_dir = vmath.vector3(-1, 0, 0)
+  elseif direction.x == -1 then
+    new_dir = vmath.vector3(0, 1, 0)
+  else
+    new_dir = vmath.vector3(1, 0, 0)
+  end
+  return new_dir
+end
+
+
+function update(self, dt)
+  if self.moving then
+    local pos = go.get_position()
+    pos = pos + self.dir * self.speed * dt
+    self.distance = self.distance - math.abs(self.speed * dt)
+    -- se chegou no fim do trajeto, muda direcao (sentido horario)
+    if self.distance < 0 then
+      local new_dir = new_direction(self.dir)
+      self.dir = vmath.normalize(new_dir)
+      sprite.play_flipbook(
+        "#sprite",
+        change_direction(
+          {
+            x = new_dir.x,
+            y = new_dir.y
+          },
+          self.name
+        ))
+      self.distance = self.base_distance
+    end
+    -- evita sair do mapa
+    if pos.x < 0 then
+      pos.x = 0
+    end
+    if pos.y < 0 then
+      pos.y = 0
+    end
+    go.set_position(pos)
+  end
+end
