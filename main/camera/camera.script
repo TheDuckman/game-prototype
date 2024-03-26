@@ -1,0 +1,11 @@
+function init(self)
+    camera.acquire_focus(".")
+    msg.post("@render:", "use_camera_projection")
+    print(go.get_position("."))
+end
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("follow") then -- <3>
+        go.set_parent(".", sender)
+    end
+end

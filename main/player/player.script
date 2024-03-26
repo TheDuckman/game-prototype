@@ -1,5 +1,6 @@
 function init(self)
 	msg.post(".", "acquire_input_focus")
+	msg.post("camera", "follow")
 	self.moving = false
 	self.firing = false
 	self.input = vmath.vector3()
