@@ -1,6 +1,21 @@
 components {
-  id: "circular_patrol"
-  component: "/main/behavior/circular_patrol.script"
+  id: "explode"
+  component: "/main/behavior/explode.script"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "random_patrol"
+  component: "/main/behavior/random_patrol.script"
   position {
     x: 0.0
     y: 0.0
@@ -19,28 +34,8 @@ components {
   }
   properties {
     id: "speed"
-    value: "60.0"
+    value: "65.0"
     type: PROPERTY_TYPE_NUMBER
-  }
-  properties {
-    id: "base_distance"
-    value: "130.0"
-    type: PROPERTY_TYPE_NUMBER
-  }
-}
-components {
-  id: "explode"
-  component: "/main/behavior/explode.script"
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
   }
 }
 embedded_components {
@@ -102,6 +97,25 @@ embedded_components {
   "angular_damping: 0.0\n"
   "locked_rotation: false\n"
   "bullet: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "bulletfactory"
+  type: "factory"
+  data: "prototype: \"/main/foes/bullet.go\"\n"
+  "load_dynamically: false\n"
+  "dynamic_prototype: false\n"
   ""
   position {
     x: 0.0

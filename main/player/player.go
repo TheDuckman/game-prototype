@@ -65,6 +65,7 @@ embedded_components {
   "restitution: 0.5\n"
   "group: \"default\"\n"
   "mask: \"border\"\n"
+  "mask: \"bullets\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_BOX\n"
