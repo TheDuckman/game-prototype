@@ -8,8 +8,8 @@ function init(self)
 	self.input = vmath.vector3()
 	self.dir = vmath.vector3(0,1,0)
 	self.correction = vmath.vector3()
-	self.speed = 150
-	self.life = 100
+	self.speed = 80
+	self.life = 5
 end
 
 function final(self)
@@ -65,13 +65,13 @@ end
 
 function update_sprite(action_id)
 	if action_id == hash("up") then
-		sprite.play_flipbook("#sprite", "player-up")
+		sprite.play_flipbook("#sprite", "player-n")
 	elseif action_id == hash("down") then
-		sprite.play_flipbook("#sprite", "player-down")
+		sprite.play_flipbook("#sprite", "player-s")
 	elseif action_id == hash("left") then
-		sprite.play_flipbook("#sprite", "player-left")
+		sprite.play_flipbook("#sprite", "player-w")
 	elseif action_id == hash("right") then
-		sprite.play_flipbook("#sprite", "player-right")
+		sprite.play_flipbook("#sprite", "player-e")
 	end
 end
 
@@ -81,7 +81,7 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("collision_response") then
 		if message.other_group == hash("bullets") then
-			take_damage(self, 20)
+			take_damage(self, 1)
 		end
 	end
 	  -- Handle collision

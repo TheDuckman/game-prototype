@@ -6,31 +6,36 @@ require("main.behavior.get_new_direction")
 require("main.behavior.patrol_random")
 
 function init(self)
-	self.life = 100
+	self.life = 1
 	self.dead = false
 	self.moving = true
 	self.name = "elite-soldier"
 	self.distance = 85
 	self.base_distance = 85
-	self.speed = 60
+	self.speed = 30
 	self.dir = get_new_direction_random()
 	change_dir({ x = self.dir.x, y = self.dir.y }, self.name)
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == hash("collision_response") and self.dead == false then
-		if self.life <= 0 then
-			explode(self)
-			return
+	if message_id == hash("collision_response") then
+		-- take damage
+		if self.life > 0 then
+			take_damage(self, 1)
 		end
-		take_damage(self, 20)
+
+		-- check if its dead
+		if self.dead == true then
+			explode(self)
+		end
+		
 	elseif message_id == hash("animation_done") then
 		go.delete()
 	end
 end
 
 function update(self, dt)
-	local fire_freq = 0.001
+	local fire_freq = 0.008
 	fire_bullet(self, fire_freq, "#bulletfactory")
 	patrol_random(self, dt)
 end

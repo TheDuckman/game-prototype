@@ -2,7 +2,7 @@ go.property("dir", vmath.vector3())
 
 function init(self)
   self.speed = 120
-  self.life = 2
+  self.life = 1
 
 end
 

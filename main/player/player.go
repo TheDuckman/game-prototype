@@ -16,7 +16,7 @@ components {
 embedded_components {
   id: "sprite"
   type: "sprite"
-  data: "default_animation: \"player-down\"\n"
+  data: "default_animation: \"player-s\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   "textures {\n"
@@ -131,7 +131,7 @@ embedded_components {
 embedded_components {
   id: "life"
   type: "sprite"
-  data: "default_animation: \"health-100\"\n"
+  data: "default_animation: \"health-5\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   "textures {\n"

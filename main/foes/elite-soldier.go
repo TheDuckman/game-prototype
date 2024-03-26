@@ -16,7 +16,7 @@ components {
 embedded_components {
   id: "sprite"
   type: "sprite"
-  data: "default_animation: \"elite-soldier-down\"\n"
+  data: "default_animation: \"elite-soldier-s\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   "textures {\n"
@@ -62,7 +62,7 @@ embedded_components {
   "    }\n"
   "    index: 0\n"
   "    count: 3\n"
-  "    id: \"\"\n"
+  "    id: \"collisionshape\"\n"
   "  }\n"
   "  data: 5.88474\n"
   "  data: 8.292683\n"
@@ -107,7 +107,7 @@ embedded_components {
 embedded_components {
   id: "life"
   type: "sprite"
-  data: "default_animation: \"health-100\"\n"
+  data: "default_animation: \"health-5\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   "textures {\n"

@@ -1,10 +1,11 @@
 require("main.animation.change_dir")
 require("main.animation.explode")
+require("main.behavior.fire_bullet")
 require("main.behavior.get_new_direction")
 require("main.behavior.patrol_clockwise")
 
 function init(self)
-  self.life = 20
+  self.life = 5
   self.dead = false
   self.moving = true
   self.name = "tank"
@@ -17,13 +18,23 @@ end
 
 
 function on_message(self, message_id, message, sender)
-  if message_id == hash("collision_response") and self.dead == false then
-    explode(self)
+  if message_id == hash("collision_response") then
+    -- take damage
+    if self.life > 0 then
+      take_damage(self, 1)
+    end
+
+    -- check if its dead
+    if self.dead == true then
+      explode(self)
+    end
   elseif message_id == hash("animation_done") then
     go.delete()
   end
 end
 
 function update(self, dt)
+  local fire_freq = 0.008
+  fire_bullet(self, fire_freq, "#bulletfactory")
   patrol_clockwise(self, dt)
 end
