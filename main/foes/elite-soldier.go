@@ -1,6 +1,6 @@
 components {
-  id: "explode"
-  component: "/main/behavior/explode.script"
+  id: "elite-soldier"
+  component: "/main/foes/elite-soldier.script"
   position {
     x: 0.0
     y: 0.0
@@ -11,31 +11,6 @@ components {
     y: 0.0
     z: 0.0
     w: 1.0
-  }
-}
-components {
-  id: "random_patrol"
-  component: "/main/behavior/random_patrol.script"
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  properties {
-    id: "foe_id"
-    value: "2.0"
-    type: PROPERTY_TYPE_NUMBER
-  }
-  properties {
-    id: "speed"
-    value: "65.0"
-    type: PROPERTY_TYPE_NUMBER
   }
 }
 embedded_components {
@@ -120,6 +95,29 @@ embedded_components {
   position {
     x: 0.0
     y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "life"
+  type: "sprite"
+  data: "default_animation: \"health-100\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
+  "blend_mode: BLEND_MODE_ALPHA\n"
+  "textures {\n"
+  "  sampler: \"texture_sampler\"\n"
+  "  texture: \"/main/sprites.atlas\"\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: 11.0
     z: 0.0
   }
   rotation {

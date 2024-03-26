@@ -1,3 +1,5 @@
+require("main.behavior.take_damage")
+
 function init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("camera", "follow")
@@ -7,6 +9,7 @@ function init(self)
 	self.dir = vmath.vector3(0,1,0)
 	self.correction = vmath.vector3()
 	self.speed = 150
+	self.life = 100
 end
 
 function final(self)
@@ -76,6 +79,11 @@ function fixed_update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
+	if message_id == hash("collision_response") then
+		if message.other_group == hash("bullets") then
+			take_damage(self, 20)
+		end
+	end
 	  -- Handle collision
 	if message_id == hash("contact_point_response") then
 	-- Get the info needed to move out of collision. We might

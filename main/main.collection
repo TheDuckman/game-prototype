@@ -143,9 +143,9 @@ instances {
   id: "barracks"
   prototype: "/main/buildings/barracks.go"
   position {
-    x: 628.0
-    y: 411.0
-    z: 1.0
+    x: 614.0
+    y: 390.0
+    z: 0.5
   }
   rotation {
     x: 0.0

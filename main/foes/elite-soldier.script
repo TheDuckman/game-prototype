@@ -1,0 +1,34 @@
+require("main.animation.change_dir")
+require("main.animation.foe_explode")
+require("main.behavior.take_damage")
+require("main.behavior.fire_bullet")
+require("main.behavior.get_new_direction")
+require("main.behavior.rand_patrol")
+
+function init(self)
+	self.life = 100
+	self.moving = true
+	self.name = "elite-soldier"
+	self.distance = 85
+	self.base_distance = 85
+	self.speed = 60
+	self.dir = get_new_direction()
+	change_dir({ x = self.dir.x, y = self.dir.y }, self.name)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("collision_response") then
+		take_damage(self, 20)
+		if self.life <= 0 then
+			explode(self)
+		end
+	elseif message_id == hash("animation_done") then
+		go.delete()
+	end
+end
+
+function update(self, dt)
+	local fire_freq = 99
+	fire_bullet(self, fire_freq, "#bulletfactory")
+	rand_patrol(self, dt)
+end

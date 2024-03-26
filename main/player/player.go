@@ -27,7 +27,7 @@ embedded_components {
   position {
     x: 0.0
     y: 0.0
-    z: 0.0
+    z: 0.1
   }
   rotation {
     x: 0.0
@@ -63,7 +63,7 @@ embedded_components {
   "mass: 0.0\n"
   "friction: 0.1\n"
   "restitution: 0.5\n"
-  "group: \"default\"\n"
+  "group: \"player\"\n"
   "mask: \"border\"\n"
   "mask: \"bullets\"\n"
   "embedded_collision_shape {\n"
@@ -96,6 +96,52 @@ embedded_components {
   position {
     x: 0.0
     y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "base"
+  type: "sprite"
+  data: "default_animation: \"player-base\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
+  "blend_mode: BLEND_MODE_ALPHA\n"
+  "textures {\n"
+  "  sampler: \"texture_sampler\"\n"
+  "  texture: \"/main/sprites.atlas\"\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: -6.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "life"
+  type: "sprite"
+  data: "default_animation: \"health-100\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
+  "blend_mode: BLEND_MODE_ALPHA\n"
+  "textures {\n"
+  "  sampler: \"texture_sampler\"\n"
+  "  texture: \"/main/sprites.atlas\"\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: 13.0
     z: 0.0
   }
   rotation {
