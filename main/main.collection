@@ -3,8 +3,8 @@ instances {
   id: "tank"
   prototype: "/main/foes/tank.go"
   position {
-    x: 377.0
-    y: 159.0
+    x: 397.0
+    y: 451.0
     z: 1.0
   }
   rotation {
@@ -23,8 +23,8 @@ instances {
   id: "tank1"
   prototype: "/main/foes/tank.go"
   position {
-    x: 200.0
-    y: 199.0
+    x: 547.0
+    y: 286.0
     z: 1.0
   }
   rotation {
@@ -43,8 +43,8 @@ instances {
   id: "tank2"
   prototype: "/main/foes/tank.go"
   position {
-    x: 55.0
-    y: 181.0
+    x: 261.0
+    y: 400.0
     z: 1.0
   }
   rotation {
@@ -63,8 +63,8 @@ instances {
   id: "chopper"
   prototype: "/main/foes/chopper.go"
   position {
-    x: 162.0
-    y: 277.0
+    x: 699.0
+    y: 398.0
     z: 1.0
   }
   rotation {
@@ -83,8 +83,8 @@ instances {
   id: "chopper1"
   prototype: "/main/foes/chopper.go"
   position {
-    x: 273.0
-    y: 337.0
+    x: 509.0
+    y: 468.0
     z: 1.0
   }
   rotation {
@@ -103,8 +103,8 @@ instances {
   id: "player"
   prototype: "/main/player/player.go"
   position {
-    x: 258.0
-    y: 244.0
+    x: 291.0
+    y: 287.0
     z: 0.2
   }
   rotation {
@@ -143,8 +143,8 @@ instances {
   id: "barracks"
   prototype: "/main/buildings/barracks.go"
   position {
-    x: 332.0
-    y: 237.0
+    x: 628.0
+    y: 411.0
     z: 1.0
   }
   rotation {
