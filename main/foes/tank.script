@@ -1,0 +1,29 @@
+require("main.animation.change_dir")
+require("main.animation.foe_explode")
+require("main.behavior.get_new_direction")
+require("main.behavior.patrol_clockwise")
+
+function init(self)
+  self.life = 20
+  self.dead = false
+  self.moving = true
+  self.name = "tank"
+  self.base_distance = 70
+  self.distance = self.base_distance
+  self.speed = 25
+  self.dir = get_new_direction_random()
+  change_dir({ x = self.dir.x, y = self.dir.y }, self.name)
+end
+
+
+function on_message(self, message_id, message, sender)
+  if message_id == hash("collision_response") and self.dead == false then
+    explode(self)
+  elseif message_id == hash("animation_done") then
+    go.delete()
+  end
+end
+
+function update(self, dt)
+  patrol_clockwise(self, dt)
+end

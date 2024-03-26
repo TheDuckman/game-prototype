@@ -1,26 +1,6 @@
 components {
-  id: "circular_patrol"
-  component: "/main/behavior/circular_patrol.script"
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  properties {
-    id: "speed"
-    value: "25.0"
-    type: PROPERTY_TYPE_NUMBER
-  }
-}
-components {
-  id: "explode"
-  component: "/main/behavior/explode.script"
+  id: "tank"
+  component: "/main/foes/tank.script"
   position {
     x: 0.0
     y: 0.0

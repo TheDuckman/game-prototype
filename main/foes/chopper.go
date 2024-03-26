@@ -1,6 +1,6 @@
 components {
-  id: "explode"
-  component: "/main/behavior/explode.script"
+  id: "chopper"
+  component: "/main/foes/chopper.script"
   position {
     x: 0.0
     y: 0.0
@@ -11,36 +11,6 @@ components {
     y: 0.0
     z: 0.0
     w: 1.0
-  }
-}
-components {
-  id: "circular_patrol"
-  component: "/main/behavior/circular_patrol.script"
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  properties {
-    id: "foe_id"
-    value: "4.0"
-    type: PROPERTY_TYPE_NUMBER
-  }
-  properties {
-    id: "speed"
-    value: "200.0"
-    type: PROPERTY_TYPE_NUMBER
-  }
-  properties {
-    id: "base_distance"
-    value: "150.0"
-    type: PROPERTY_TYPE_NUMBER
   }
 }
 embedded_components {
