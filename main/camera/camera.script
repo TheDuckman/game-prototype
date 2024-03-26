@@ -1,7 +1,6 @@
 function init(self)
     camera.acquire_focus(".")
     msg.post("@render:", "use_camera_projection")
-    print(go.get_position("."))
 end
 
 function on_message(self, message_id, message, sender)
