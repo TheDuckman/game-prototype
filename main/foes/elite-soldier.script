@@ -1,5 +1,5 @@
 require("main.animation.change_dir")
-require("main.animation.foe_explode")
+require("main.animation.explode")
 require("main.behavior.take_damage")
 require("main.behavior.fire_bullet")
 require("main.behavior.get_new_direction")
